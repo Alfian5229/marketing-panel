@@ -16,3 +16,4 @@
 // });
 
 Route::get('/', 'HomeController@index');
+Route::get('/transaksi', 'TransaksiController@index');
