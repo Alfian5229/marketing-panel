@@ -16,3 +16,6 @@
 // });
 
 Route::get('/', 'HomeController@index');
+Route::get('/transaksi', 'TransaksiController@index');
+
+Route::get('/mesintrxcountperday', 'TransaksiController@mesinTrxCountPerDay');
