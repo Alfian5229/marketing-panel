@@ -78,6 +78,21 @@ return [
             'sslmode' => 'prefer',
         ],
 
+        'pgsql_live' => [
+            'driver' => 'pgsql',
+            'url' => env('DATABASE_URL'),
+            'host' => env('DB_HOST_SECOND', '10.101.11.51'),
+            'port' => env('DB_PORT_SECOND', '5432'),
+            'database' => env('DB_DATABASE_SECOND', 'eklanku_payment'),
+            'username' => env('DB_USERNAME_SECOND', 'jack'),
+            'password' => env('DB_PASSWORD_SECOND', 'Psql@7890#'),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'schema' => 'public',
+            'sslmode' => 'prefer',
+        ],
+
         'sqlsrv' => [
             'driver' => 'sqlsrv',
             'url' => env('DATABASE_URL'),

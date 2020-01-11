@@ -19,3 +19,6 @@ Route::get('/', 'HomeController@index');
 Route::get('/transaksi', 'TransaksiController@index');
 
 Route::get('/mesintrxcountperday', 'TransaksiController@mesinTrxCountPerDay');
+
+Route::get('/reportyearlytrx', 'ReportYearlyTrxController@index');
+Route::get('/test', 'ReportYearlyTrxController@dailyActiveTrxJanuary');
