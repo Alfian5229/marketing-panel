@@ -21,4 +21,10 @@ Route::get('/transaksi', 'TransaksiController@index');
 Route::get('/mesintrxcountperday', 'TransaksiController@mesinTrxCountPerDay');
 
 Route::get('/reportyearlytrx', 'ReportYearlyTrxController@index');
-Route::get('/test', 'ReportYearlyTrxController@dailyActiveTrxJanuary');
+Route::get('/testsatu', 'ReportYearlyTrxController@dailyActiveTrx_satu');
+Route::get('/testdua', 'ReportYearlyTrxController@dailyActiveTrx_dua');
+
+Route::get('/monthlyactivetrx', 'ReportYearlyTrxController@monthlyActiveTrx');
+
+Route::get('/membertrxeachmonth', 'ReportYearlyTrxController@memberTrxEachMonth');
+Route::get('/membertrxeachmonthfull', 'ReportYearlyTrxController@memberTrxEachMonthFull');
