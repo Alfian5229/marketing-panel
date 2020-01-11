@@ -85,15 +85,18 @@ class ReportYearlyTrxController extends Controller
         for($i = 0; $i < 12; $i++){
             $tanggal = $i;
             if(strlen($tanggal) == 1){
-                $tanggal = '0' . (String)$tanggal+1;
+                $tanggal = $tanggal+1;
+                $tanggal = '0' . $tanggal;
             }
-            dd($tanggal);
+            if(strlen($tanggal) == 3){
+                $tanggal = ltrim($tanggal, '0');
+            }
             $offset = '0';
             $limit_query = '100';
             $trx = DB::connection('pgsql_live')
             ->select("SELECT distinct mbr_code
                 FROM report_transaksi_2019_" . $tanggal . "
-                where transaksi_status = 'Active'
+              
                 order by mbr_code
                 OFFSET " . $offset
                 // . " LIMIT " . $limit_query
@@ -108,7 +111,7 @@ class ReportYearlyTrxController extends Controller
                 $mbr_code_collection[$index] = $key->mbr_code;
                 $index++;
             }
-            $insert = ReportMonthlyTrxModel::whereIn('mbr_code', $mbr_code_collection)
+            $insert = ReportMonthlyTrxFullModel::whereIn('mbr_code', $mbr_code_collection)
                 ->update([$bulan[$i] => '1']);
         }
     }
