@@ -25,6 +25,11 @@ Route::get('/testsatu', 'ReportYearlyTrxController@dailyActiveTrx_satu');
 Route::get('/testdua', 'ReportYearlyTrxController@dailyActiveTrx_dua');
 
 Route::get('/monthlyactivetrx', 'ReportYearlyTrxController@monthlyActiveTrx');
+Route::get('/monthlyactivetrxfull', 'ReportYearlyTrxController@monthlyActiveTrxFull');
 
 Route::get('/membertrxeachmonth', 'ReportYearlyTrxController@memberTrxEachMonth');
 Route::get('/membertrxeachmonthfull', 'ReportYearlyTrxController@memberTrxEachMonthFull');
+
+Route::get('/countsum', 'ReportTrxCountSumController@countSum');
+
+Route::get('/phpinfo', 'PhpInfoController@index');

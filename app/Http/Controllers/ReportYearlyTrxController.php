@@ -96,7 +96,47 @@ class ReportYearlyTrxController extends Controller
             $trx = DB::connection('pgsql_live')
             ->select("SELECT distinct mbr_code
                 FROM report_transaksi_2019_" . $tanggal . "
-              
+                where transaksi_status = 'Active'
+                order by mbr_code
+                OFFSET " . $offset
+                // . " LIMIT " . $limit_query
+            );
+            // foreach($trx as $key){
+            //     $insert = ReportMonthlyTrxModel::where('mbr_code', '=', $key->mbr_code)
+            //         ->update([$bulan => '1']);
+            // }
+            $mbr_code_collection = array();
+            $index = 0;
+            foreach($trx as $key){
+                $mbr_code_collection[$index] = $key->mbr_code;
+                $index++;
+            }
+            $insert = ReportMonthlyTrxModel::whereIn('mbr_code', $mbr_code_collection)
+                ->update([$bulan[$i] => '1']);
+        }
+    }
+
+    public function monthlyActiveTrxFull(){
+
+        $bulan = array(
+            'january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'
+        );
+
+        for($i = 0; $i < 12; $i++){
+            $tanggal = $i;
+            if(strlen($tanggal) == 1){
+                $tanggal = $tanggal+1;
+                $tanggal = '0' . $tanggal;
+            }
+            if(strlen($tanggal) == 3){
+                $tanggal = ltrim($tanggal, '0');
+            }
+            $offset = '0';
+            $limit_query = '100';
+            $trx = DB::connection('pgsql_live')
+            ->select("SELECT distinct mbr_code
+                FROM report_transaksi_2019_" . $tanggal . "
+
                 order by mbr_code
                 OFFSET " . $offset
                 // . " LIMIT " . $limit_query
