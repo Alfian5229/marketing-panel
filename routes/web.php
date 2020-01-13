@@ -33,3 +33,7 @@ Route::get('/membertrxeachmonthfull', 'ReportYearlyTrxController@memberTrxEachMo
 Route::get('/countsum', 'ReportTrxCountSumController@countSum');
 
 Route::get('/phpinfo', 'PhpInfoController@index');
+
+Route::get('/', function () {
+    return view('dashboard');
+});
