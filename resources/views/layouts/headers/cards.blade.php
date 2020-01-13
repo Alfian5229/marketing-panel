@@ -27,7 +27,6 @@
                 <div class="row">
                   <div class="col">
                     <h5 class="card-title text-uppercase text-muted mb-0">Profit This Month</h5>
-                    <span class="h2 font-weight-bold mb-0">Rp. {{number_format($transaksi[0][0]->total,0,',','.')}}</span>
                   </div>
                   <div class="col-auto">
                     <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
@@ -49,7 +48,6 @@
                 <div class="row">
                   <div class="col">
                     <h5 class="card-title text-uppercase text-muted mb-0">Total Member</h5>
-                    <span class="h2 font-weight-bold mb-0">{{$totuser}}</span>
                   </div>
                   <div class="col-auto">
                     <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
@@ -71,7 +69,6 @@
                 <div class="row">
                   <div class="col">
                     <h5 class="card-title text-uppercase text-muted mb-0">Total Withdraw This Day</h5>
-                    <span class="h2 font-weight-bold mb-0">{{$withdraw}}</span>
                   </div>
                   <div class="col-auto">
                     <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
@@ -93,7 +90,6 @@
                 <div class="row">
                   <div class="col">
                     <h5 class="card-title text-uppercase text-muted mb-0">Transaction This Month</h5>
-                    <span class="h2 font-weight-bold mb-0">{{$transaksi[1][0]->total}}</span>
                   </div>
                   <div class="col-auto">
                     <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">

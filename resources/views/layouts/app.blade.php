@@ -30,7 +30,17 @@
         <link rel="stylesheet" href="{{asset('assets')}}/css/argon.css?v=1.1.0" type="text/css">
     </head>
     <body class="{{ $class ?? '' }}" id="body">
-        @auth()
+        <form id="logout-form" action="/logout" method="GET" style="display: none;">
+            @csrf
+        </form>
+        @include('layouts.navbars.sidebar')
+
+        <div class="main-content" id="panel">
+            @include('layouts.navbars.navbar')
+            @yield('content')
+        </div>
+
+        {{-- @auth()
             <form id="logout-form" action="/logout" method="GET" style="display: none;">
                 @csrf
             </form>
@@ -43,7 +53,7 @@
         </div>
         @guest()
             @include('layouts.footers.guest')
-        @endguest
+        @endguest --}}
 
         <!-- Argon Scripts -->
 

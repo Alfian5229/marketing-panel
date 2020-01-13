@@ -34,6 +34,8 @@ Route::get('/countsum', 'ReportTrxCountSumController@countSum');
 
 Route::get('/phpinfo', 'PhpInfoController@index');
 
-Route::get('/', function () {
+Route::get('/dashboard', function () {
     return view('dashboard');
 });
+
+Route::get('/data_trx_januari', 'data_transaksi\DataTransaksiController@index');

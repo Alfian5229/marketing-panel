@@ -4,7 +4,7 @@
       <!-- Brand -->
         <div class="sidenav-header d-flex align-items-center">
             <a class="navbar-brand" href="#" style="margin-left:10%">
-                <img src="{{asset('assets')}}/img/brand/eklankumax.png" class="navbar-brand-img" alt="...">
+                <img src="{{asset('assets')}}/img/brand/blue.png" class="navbar-brand-img" alt="...">
             </a>
             <div class="ml-auto">
                 <!-- Sidenav toggler -->
@@ -31,19 +31,19 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-examples">
                             <i class="ni ni-ungroup text-orange"></i>
-                            <span class="nav-link-text">{{ __('Data Master') }}</span>
+                            <span class="nav-link-text">{{ __('Data Transaksi 2019') }}</span>
                         </a>
-                        <div class="collapse {{ $activepage == 'membermitra' ? ' show' : '' }}" id="navbar-examples">
+                        <div class="collapse {{ $activepage == 'data_transaksi' ? ' show' : '' }}" id="navbar-examples">
                             <ul class="nav nav-sm flex-column">
-                                <li class="nav-item {{ $activepage == 'users' | $activepage == 'membermitra' ? ' active' : '' }}">
-                                    <a class="nav-link" href="/member">
-                                        {{ __('Member Mitra') }}
+                                <li class="nav-item {{ $activepage == 'data_trx_januari' ? ' active' : '' }}">
+                                    <a class="nav-link" href="/data_trx_januari">
+                                        {{ __('Januari') }}
                                     </a>
                                 </li>
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="#navbar-laporan" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-examples">
                             <i class="ni ni-archive-2 text-green"></i>
                             <span class="nav-link-text">{{ __('Report') }}</span>
@@ -83,7 +83,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
         </div>
