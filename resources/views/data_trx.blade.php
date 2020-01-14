@@ -14,7 +14,7 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive py-4">
-                    <table class="table table-flush" id="datatable-basic">
+                    <table class="table table-flush" id="myTable">
                         <thead class="thead-light text-center">
                             <tr>
                                 <th rowspan="2">mbr code</th>
@@ -30,7 +30,7 @@
                                 <th>Sum</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        {{-- <tbody>
                             @foreach ($data as $key)
                                 <tr>
                                     <td>{{$key->mbr_code}}</td>
@@ -42,7 +42,7 @@
                                     <td class="text-right">{{$key->sum_2}}</td>
                                 </tr>
                             @endforeach
-                        </tbody>
+                        </tbody> --}}
                     </table>
                 </div>
             </div>
@@ -53,7 +53,18 @@
 @push('js')
     <script>
         $(document).ready( function () {
-            $('#myTable').DataTable();
+            $('#myTable').DataTable(
+                {
+                    processing: true,
+                    serverSide: true,
+                    ajax: '/datatrx/json/januari',
+                    columns: [
+                        { data: 'mbr_code', name: 'mbr_code' },
+                        { data: 'full_name', name: 'full_name' },
+                        { data: 'phone', name: 'phone' }
+                    ]
+                }
+            );
         });
     </script>
 @endpush

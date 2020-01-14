@@ -36,7 +36,7 @@
                         <div class="collapse {{ $activepage == 'data_transaksi' ? ' show' : '' }}" id="navbar-examples">
                             <ul class="nav nav-sm flex-column">
                                 <li class="nav-item {{ $activepage == 'data_trx_januari' ? ' active' : '' }}">
-                                    <a class="nav-link" href="/datatrx/januari">
+                                    <a class="nav-link" href="/datatrx/bulan/januari">
                                         {{ __('Januari') }}
                                     </a>
                                 </li>

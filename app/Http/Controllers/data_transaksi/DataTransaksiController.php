@@ -9,13 +9,26 @@ use DB;
 class DataTransaksiController extends Controller
 {
     public function index(){
+        return view('data_trx');
+    }
+
+    // public function index(){
+    //     ini_set('memory_limit', '1G');
+
+    //     $data = ReportTrxCountSumModel::select('mbr_code', 'full_name', 'phone')
+    //     ->orderBy('mbr_code')
+    //     ->get();
+    //     return view('data_trx', compact('data'));
+    // }
+
+    public function json(){
         ini_set('memory_limit', '1G');
 
-        $data = ReportTrxCountSumModel::select('full_name')
+        $data = ReportTrxCountSumModel::select('mbr_code', 'full_name', 'phone')
             ->orderBy('mbr_code')
+            ->limit(10)
             ->get()->toJson(JSON_PRETTY_PRINT);
         return $data;
-        return view('data_trx', compact('data'));
     }
 }
 
