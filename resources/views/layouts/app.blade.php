@@ -36,7 +36,6 @@
         @include('layouts.navbars.sidebar')
 
         <div class="main-content" id="panel">
-            @include('layouts.navbars.navbar')
             @yield('content')
         </div>
 
