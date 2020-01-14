@@ -8,9 +8,7 @@ use App\ReportTrxCountSumModel;
 class DataTransaksiController extends Controller
 {
     public function index(){
-        $data = ReportTrxCountSumModel::limit(100)->get();
-        dd($data);
-
-        return view('data_trx');
+        $data = ReportTrxCountSumModel::orderBy('mbr_code')->limit(10)->get();
+        return view('data_trx', compact('data'));
     }
 }
