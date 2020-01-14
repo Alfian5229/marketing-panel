@@ -16,9 +16,10 @@ class ReportTrxCountSumController extends Controller
     }
 
     public function countSum(){
-        $bulan = '12';
-        $min_tanggal = 15;
-        $max_tanggal = 31;
+        set_time_limit(500);
+        $bulan = '01';
+        $min_tanggal = 1;
+        $max_tanggal = 15;
 
         DB::beginTransaction();
         try {
@@ -33,7 +34,7 @@ class ReportTrxCountSumController extends Controller
                     ->select("SELECT mbr_code, COUNT(mbr_code), SUM(harga_jual)
                         FROM report_transaksi_2019_" . $bulan . "
                         WHERE to_char(tgl_trx, 'YYYY-MM-dd') = '2019-" . $bulan . "-" . $tanggal . "' 
-                        AND transaksi_status = 'Active'
+                        AND transaksi_status = 'Gagal'
                         GROUP BY mbr_code
                         ORDER BY mbr_code;
                     ");
@@ -41,11 +42,11 @@ class ReportTrxCountSumController extends Controller
                 $index = 0;
                 foreach($trx as $key){
                     DB::connection('pgsql')
-                        ->table('report_trx_count_sum_2019_' . $bulan)
+                        ->table('report_trx_count_sum_gagal_2019_' . $bulan)
                         ->where('mbr_code', '=', $key->mbr_code)
                         ->update([
-                            $tanggal_report . '_sum' => $key->sum,
-                            $tanggal_report . '_count' => $key->count
+                            'sum_' . $tanggal_report => $key->sum,
+                            'count_' . $tanggal_report => $key->count
                         ]);
                 }
             }

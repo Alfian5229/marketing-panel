@@ -14,35 +14,40 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive py-4">
-                    <table class="table table-flush" id="myTable">
+                    <table class="table table-flush" id="datatable-basic">
                         <thead class="thead-light text-center">
                             <tr>
                                 <th rowspan="2">mbr code</th>
                                 <th rowspan="2">full name</th>
                                 <th rowspan="2">phone</th>
-                                <th colspan="2">tanggal 1</th>
-                                <th colspan="2">tanggal 2</th>
+                                @for ($i = 1; $i < $max_tanggal+1; $i++)
+                                    <th colspan="2">tanggal {{$i}}</th>
+                                @endfor
                             </tr>
                             <tr>
-                                <th>Count</th>
-                                <th>Sum</th>
-                                <th>Count</th>
-                                <th>Sum</th>
+                                @for ($i = 1; $i < $max_tanggal+1; $i++)
+                                    <th>Sum</th>
+                                    <th>Count</th>
+                                @endfor
                             </tr>
                         </thead>
-                        {{-- <tbody>
+                        <tbody>
                             @foreach ($data as $key)
                                 <tr>
                                     <td>{{$key->mbr_code}}</td>
                                     <td>{{$key->full_name}}</td>
                                     <td>{{$key->phone}}</td>
-                                    <td class="text-right">{{$key->count_1}}</td>
-                                    <td class="text-right">{{$key->sum_1}}</td>
-                                    <td class="text-right">{{$key->count_2}}</td>
-                                    <td class="text-right">{{$key->sum_2}}</td>
+                                    @for ($i = 1; $i < $max_tanggal+1; $i++)
+                                        @php
+                                            $sum = 'sum_' . $i;
+                                            $count = 'count_' . $i;
+                                        @endphp
+                                        <td class="text-right"><?php echo $key->$sum ?></td>
+                                        <td class="text-right">{{$key->$count}}</td>
+                                    @endfor
                                 </tr>
                             @endforeach
-                        </tbody> --}}
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -52,19 +57,19 @@
 
 @push('js')
     <script>
-        $(document).ready( function () {
-            $('#myTable').DataTable(
-                {
-                    processing: true,
-                    serverSide: true,
-                    ajax: '/datatrx/json/januari',
-                    columns: [
-                        { data: 'mbr_code', name: 'mbr_code' },
-                        { data: 'full_name', name: 'full_name' },
-                        { data: 'phone', name: 'phone' }
-                    ]
-                }
-            );
-        });
+        // $(document).ready( function () {
+        //     $('#myTable').DataTable(
+        //         {
+        //             processing: true,
+        //             serverSide: true,
+        //             ajax: '/datatrx/json/januari',
+        //             columns: [
+        //                 { data: 'mbr_code', name: 'mbr_code' },
+        //                 { data: 'full_name', name: 'full_name' },
+        //                 { data: 'phone', name: 'phone' }
+        //             ]
+        //         }
+        //     );
+        // });
     </script>
 @endpush

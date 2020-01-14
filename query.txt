@@ -1,0 +1,197 @@
+select * from report_trx_count_sum_2019_01
+
+where count_1 = '0' AND count_2 = '0' AND count_3 = '0' AND count_4 = '0' AND count_5 = '0' AND
+count_6 = '0' AND count_7 = '0' AND count_8 = '0' AND count_9 = '0' AND count_10 = '0' AND
+count_11 = '0' AND count_12 = '0' AND count_13 = '0' AND count_14 = '0' AND count_15 = '0' AND
+count_16 = '0' AND count_17 = '0' AND count_18 = '0' AND count_19 = '0' AND count_20 = '0' AND
+count_21 = '0' AND count_22 = '0' AND count_23 = '0' AND count_24 = '0' AND count_25 = '0' AND
+count_26 = '0' AND count_27 = '0' AND count_28 = '0'
+AND count_29 = '0'
+AND count_30 = '0'
+AND count_31 = '0'
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_1 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_1 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_2 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_2 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_3 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_3 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_4 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_4 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_5 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_5 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_6 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_6 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_7 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_7 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_8 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_8 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_9 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_9 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_10 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_10 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_11 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_11 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_12 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_12 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_13 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_13 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_14 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_14 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_15 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_15 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_16 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_16 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_17 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_17 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_18 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_18 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_19 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_19 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_20 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_20 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_21 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_21 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_22 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_22 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_23 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_23 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_24 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_24 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_25 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_25 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_26 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_26 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_27 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_27 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_28 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_28 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_29 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_29 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_30 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_30 SET DEFAULT 0;
+	
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN sum_31 SET DEFAULT 0;
+
+ALTER TABLE public.report_trx_count_sum_gagal_2019_12
+    ALTER COLUMN count_31 SET DEFAULT 0;
