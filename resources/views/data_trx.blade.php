@@ -7,8 +7,8 @@
             <div class="card-header bg-transparent">
                 <div class="row align-items-center">
                     <div class="col">
-                        <h6 class="text-uppercase text-muted ls-1 mb-1">ini judul</h6>
-                        <h5 class="h3 mb-0">ini juga</h5>
+                        <h6 class="text-uppercase text-muted ls-1 mb-1">Data Transaksi Bulan {{$bulan}}</h6>
+                        {{-- <h5 class="h3 mb-0">ini juga</h5> --}}
                     </div>
                 </div>
             </div>
@@ -58,7 +58,7 @@
 @push('js')
     <script>
         // $(document).ready( function () {
-        //     $('#myTable').DataTable(
+        //     $('#datatable-basic').DataTable(
         //         {
         //             processing: true,
         //             serverSide: true,

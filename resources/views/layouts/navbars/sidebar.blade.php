@@ -29,6 +29,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        {{-- Data Transaksi --}}
                         <a class="nav-link" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-examples">
                             <i class="ni ni-ungroup text-orange"></i>
                             <span class="nav-link-text">{{ __('Data Transaksi 2019') }}</span>
@@ -36,12 +37,142 @@
                         <div class="collapse {{ $activepage == 'data_transaksi' ? ' show' : '' }}" id="navbar-examples">
                             <ul class="nav nav-sm flex-column">
                                 <li class="nav-item {{ $activepage == 'data_trx_januari' ? ' active' : '' }}">
-                                    <a class="nav-link" href="/datatrx/bulan/januari">
+                                    <a class="nav-link" href="/datatrx/bulan/1">
                                         {{ __('Januari') }}
+                                    </a>
+                                    <a class="nav-link" href="/datatrx/bulan/2">
+                                        {{ __('Februari') }}
+                                    </a>
+                                    <a class="nav-link" href="/datatrx/bulan/3">
+                                        {{ __('Maret') }}
+                                    </a>
+                                    <a class="nav-link" href="/datatrx/bulan/4">
+                                        {{ __('April') }}
+                                    </a>
+                                    <a class="nav-link" href="/datatrx/bulan/5">
+                                        {{ __('Mei') }}
+                                    </a>
+                                    <a class="nav-link" href="/datatrx/bulan/6">
+                                        {{ __('Juni') }}
+                                    </a>
+                                    <a class="nav-link" href="/datatrx/bulan/7">
+                                        {{ __('Juli') }}
+                                    </a>
+                                    <a class="nav-link" href="/datatrx/bulan/8">
+                                        {{ __('Agustus') }}
+                                    </a>
+                                    <a class="nav-link" href="/datatrx/bulan/9">
+                                        {{ __('September') }}
+                                    </a>
+                                    <a class="nav-link" href="/datatrx/bulan/10">
+                                        {{ __('Oktober') }}
+                                    </a>
+                                    <a class="nav-link" href="/datatrx/bulan/11">
+                                        {{ __('November') }}
+                                    </a>
+                                    <a class="nav-link" href="/datatrx/bulan/12">
+                                        {{ __('Desember') }}
                                     </a>
                                 </li>
                             </ul>
                         </div>
+
+                        {{-- Data Product Terlaris --}}
+                        <a class="nav-link" href="#data-product" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="data-product">
+                            <i class="ni ni-ungroup text-orange"></i>
+                            <span class="nav-link-text">{{ __('Data Product Terlaris 2019') }}</span>
+                        </a>
+                        <div class="collapse {{ $activepage == 'data_product' ? ' show' : '' }}" id="data-product">
+                            <ul class="nav nav-sm flex-column">
+                                <li class="nav-item {{ $activepage == 'data_product' ? ' active' : '' }}">
+                                    <a class="nav-link" href="/dataproduct/1">
+                                        {{ __('Januari') }}
+                                    </a>
+                                    <a class="nav-link" href="/dataproduct/2">
+                                        {{ __('Februari') }}
+                                    </a>
+                                    <a class="nav-link" href="/dataproduct/3">
+                                        {{ __('Maret') }}
+                                    </a>
+                                    <a class="nav-link" href="/dataproduct/4">
+                                        {{ __('April') }}
+                                    </a>
+                                    <a class="nav-link" href="/dataproduct/5">
+                                        {{ __('Mei') }}
+                                    </a>
+                                    <a class="nav-link" href="/dataproduct/6">
+                                        {{ __('Juni') }}
+                                    </a>
+                                    <a class="nav-link" href="/dataproduct/7">
+                                        {{ __('Juli') }}
+                                    </a>
+                                    <a class="nav-link" href="/dataproduct/8">
+                                        {{ __('Agustus') }}
+                                    </a>
+                                    <a class="nav-link" href="/dataproduct/9">
+                                        {{ __('September') }}
+                                    </a>
+                                    <a class="nav-link" href="/dataproduct/10">
+                                        {{ __('Oktober') }}
+                                    </a>
+                                    <a class="nav-link" href="/dataproduct/11">
+                                        {{ __('November') }}
+                                    </a>
+                                    <a class="nav-link" href="/dataproduct/12">
+                                        {{ __('Desember') }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        {{-- Data Vendor --}}
+                        <a class="nav-link" href="#data-vendor" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="data-vendor">
+                            <i class="ni ni-ungroup text-orange"></i>
+                            <span class="nav-link-text">{{ __('Data Vendor Terlaris 2019') }}</span>
+                        </a>
+                        <div class="collapse {{ $activepage == 'data_product' ? ' show' : '' }}" id="data-vendor">
+                            <ul class="nav nav-sm flex-column">
+                                <li class="nav-item {{ $activepage == 'data_product' ? ' active' : '' }}">
+                                    <a class="nav-link" href="/datavendor/1">
+                                        {{ __('Januari') }}
+                                    </a>
+                                    <a class="nav-link" href="/datavendor/2">
+                                        {{ __('Februari') }}
+                                    </a>
+                                    <a class="nav-link" href="/datavendor/3">
+                                        {{ __('Maret') }}
+                                    </a>
+                                    <a class="nav-link" href="/datavendor/4">
+                                        {{ __('April') }}
+                                    </a>
+                                    <a class="nav-link" href="/datavendor/5">
+                                        {{ __('Mei') }}
+                                    </a>
+                                    <a class="nav-link" href="/datavendor/6">
+                                        {{ __('Juni') }}
+                                    </a>
+                                    <a class="nav-link" href="/datavendor/7">
+                                        {{ __('Juli') }}
+                                    </a>
+                                    <a class="nav-link" href="/datavendor/8">
+                                        {{ __('Agustus') }}
+                                    </a>
+                                    <a class="nav-link" href="/datavendor/9">
+                                        {{ __('September') }}
+                                    </a>
+                                    <a class="nav-link" href="/datavendor/10">
+                                        {{ __('Oktober') }}
+                                    </a>
+                                    <a class="nav-link" href="/datavendor/11">
+                                        {{ __('November') }}
+                                    </a>
+                                    <a class="nav-link" href="/datavendor/12">
+                                        {{ __('Desember') }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
                     </li>
                     {{-- <li class="nav-item">
                         <a class="nav-link" href="#navbar-laporan" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-examples">

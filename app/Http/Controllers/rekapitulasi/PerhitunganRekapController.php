@@ -52,6 +52,6 @@ class PerhitunganRekapController extends Controller
                 'count_sukses' => $total_count
             ]);
 
-        echo 'total_sum_sukses:' . $total_sum . ' total_count_sukses:' . $total_count . 'unique user:';
+        echo 'total_sum_sukses:' . $total_sum . ' total_count_sukses:' . $total_count . 'unique user:' . $unique_user;
     }
 }
