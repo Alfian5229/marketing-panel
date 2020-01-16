@@ -173,6 +173,39 @@
                             </ul>
                         </div>
 
+                        {{-- Data Umur User --}}
+                        <a class="nav-link" href="#data-umur" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="data-umur">
+                            <i class="ni ni-ungroup text-orange"></i>
+                            <span class="nav-link-text">{{ __('Data Umur User') }}</span>
+                        </a>
+                        <div class="collapse {{ $activepage == 'data_umur' ? ' show' : '' }}" id="data-umur">
+                            <ul class="nav nav-sm flex-column">
+                                <li class="nav-item {{ $activepage == 'data_umur' ? ' active' : '' }}">
+                                    <a class="nav-link" href="/dataumur/0/17">
+                                        {{ __('Umur 0 Sampai 17 Tahun') }}
+                                    </a>
+                                    <a class="nav-link" href="/dataumur/18/24">
+                                        {{ __('Umur 18 Sampai 24 Tahun') }}
+                                    </a>
+                                    <a class="nav-link" href="/dataumur/25/34">
+                                        {{ __('Umur 25 Sampai 34 Tahun') }}
+                                    </a>
+                                    <a class="nav-link" href="/dataumur/35/44">
+                                        {{ __('Umur 35 Sampai 44 Tahun') }}
+                                    </a>
+                                    <a class="nav-link" href="/dataumur/45/54">
+                                        {{ __('Umur 45 Sampai 54 Tahun') }}
+                                    </a>
+                                    <a class="nav-link" href="/dataumur/55/64">
+                                        {{ __('Umur 55 Sampai 64 Tahun') }}
+                                    </a>
+                                    <a class="nav-link" href="/dataumur/65">
+                                        {{ __('Umur 65 Tahun keatas') }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
                     </li>
                     {{-- <li class="nav-item">
                         <a class="nav-link" href="#navbar-laporan" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-examples">

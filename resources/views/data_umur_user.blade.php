@@ -7,8 +7,8 @@
             <div class="card-header bg-transparent">
                 <div class="row align-items-center">
                     <div class="col">
-                        <h6 class="text-uppercase text-muted ls-1 mb-1">Bulan {{$bulan}}</h6>
-                        <h5 class="h3 mb-0">Code Vendor : {{$vendor}}</h5>
+                        <h6 class="text-uppercase text-muted ls-1 mb-1"></h6>
+                        <h5 class="h3 mb-0">DATA Umur User {{$awal}} sampai {{$akhir}} Tahun</h5>
                     </div>
                 </div>
             </div>
@@ -17,15 +17,23 @@
                     <table class="table table-flush" id="datatable-basic">
                         <thead class="thead-light">
                             <tr>
-                                <th rowspan="2">Product Code</th>
-                                <th colspan="2">Total Terjual</th>
+                                <th rowspan="2">MBR Code</th>
+                                <th rowspan="2">MBR Sponsor</th>
+                                <th rowspan="2">MBR Upline</th>
+                                <th rowspan="2">MBR Type</th>
+                                <th rowspan="2">MBR Nama</th>
+                                <th colspan="2">Umur</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($data as $key)
                                 <tr>
-                                    <td>{{$key->product_kode}}</td>
-                                    <td>{{$key->total_terjual}}</td>
+                                    <td>{{$key->mbr_code}}</td>
+                                    <td>{{$key->mbr_sponsor}}</td>
+                                    <td>{{$key->mbr_upline}}</td>
+                                    <td>{{$key->mbr_type}}</td>
+                                    <td>{{$key->mbr_name}}</td>
+                                    <td>{{$key->umur}}</td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -43,10 +51,12 @@
         //         {
         //             processing: true,
         //             serverSide: true,
-        //             ajax: '/datatrx/json/januari',
+        //             type: 'POST',
+        //             data: {"_token": "<?= csrf_token() ?>"},
         //             columns: [
-        //                 { data: 'product_kode', name: 'product_kode' },
-        //                 { data: 'total_terjual', name: 'total_terjual' }
+        //                 { data: 'mbr_code'},
+        //                 { data: 'full_name'},
+        //                 { data: 'phone'}
         //             ]
         //         }
         //     );

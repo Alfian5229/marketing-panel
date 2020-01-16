@@ -57,19 +57,24 @@
 
 @push('js')
     <script>
-        // $(document).ready( function () {
-        //     $('#datatable-basic').DataTable(
-        //         {
-        //             processing: true,
-        //             serverSide: true,
-        //             ajax: '/datatrx/json/januari',
-        //             columns: [
-        //                 { data: 'mbr_code', name: 'mbr_code' },
-        //                 { data: 'full_name', name: 'full_name' },
-        //                 { data: 'phone', name: 'phone' }
-        //             ]
-        //         }
-        //     );
-        // });
+        $(document).ready( function () {
+            $('#datatable-basic').DataTable(
+                {
+                    "processing": true,
+                    "serverSide": true,
+                    "ajax": {
+                        "url": "/datatrx/bulan/1",
+                        "datType": "json"
+                        "type": 'POST',
+                        "data": {"_token": "<?= csrf_token() ?>"},
+                    }
+                    "columns": [
+                        { "data": 'mbr_code'},
+                        { "data": 'full_name'},
+                        { "data": 'phone'}
+                    ]
+                }
+            );
+        });
     </script>
 @endpush

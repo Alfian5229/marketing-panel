@@ -47,3 +47,7 @@ Route::get('/rekapitulasi/perhitungan/{bulan}/{max_tanggal}', 'rekapitulasi\Perh
 Route::get('/datavendor/{bulan}', 'DataTransaksiProductController@vendor');
 Route::get('/dataproductvendor/{vendor}/{bulan}', 'DataTransaksiProductController@index');
 Route::get('/dataproduct/{bulan}', 'DataTransaksiProductController@product');
+
+Route::get('/dataumur/{awal}/{akhir}', 'DataUmurUserController@index');
+
+Route::get('/dataday', 'ReportDataDayController@countSum');
