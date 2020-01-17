@@ -8,7 +8,12 @@
                 <div class="row align-items-center">
                     <div class="col">
                         <h6 class="text-uppercase text-muted ls-1 mb-1"></h6>
-                        <h5 class="h3 mb-0">DATA Umur User {{$awal}} sampai {{$akhir}} Tahun</h5>
+                        @if ($awal === '65')
+                            <h5 class="h3 mb-0">DATA Umur User {{$awal}} Tahun Keatas</h5>
+                        @else
+                            <h5 class="h3 mb-0">DATA Umur User {{$awal}} sampai {{$akhir}} Tahun</h5>
+                        @endif
+                        
                     </div>
                 </div>
             </div>
@@ -22,7 +27,9 @@
                                 <th rowspan="2">MBR Upline</th>
                                 <th rowspan="2">MBR Type</th>
                                 <th rowspan="2">MBR Nama</th>
-                                <th colspan="2">Umur</th>
+                            </tr>
+                            <tr>
+                                <th>Umur</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -46,20 +53,24 @@
 
 @push('js')
     <script>
-        // $(document).ready( function () {
-        //     $('#datatable-basic').DataTable(
-        //         {
-        //             processing: true,
-        //             serverSide: true,
-        //             type: 'POST',
-        //             data: {"_token": "<?= csrf_token() ?>"},
-        //             columns: [
-        //                 { data: 'mbr_code'},
-        //                 { data: 'full_name'},
-        //                 { data: 'phone'}
-        //             ]
-        //         }
-        //     );
-        // });
+        $(document).ready( function () {
+            $('#datatable-basic').DataTable(
+                {
+                    "processing": true,
+                    "serverSide": true,
+                    "ajax": {
+                        "url": "/datatrx/bulan/1",
+                        "dataType": "json"
+                        "type": "POST",
+                        "data": {"_token": "<?= csrf_token() ?>"},
+                    }
+                    "columns": [
+                        { "data": 'mbr_code'},
+                        { "data": 'full_name'},
+                        { "data": 'phone'}
+                    ]
+                }
+            );
+        });
     </script>
 @endpush

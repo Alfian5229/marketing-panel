@@ -64,7 +64,7 @@
                     "serverSide": true,
                     "ajax": {
                         "url": "/datatrx/bulan/1",
-                        "datType": "json"
+                        "dataType": "json"
                         "type": 'POST',
                         "data": {"_token": "<?= csrf_token() ?>"},
                     }

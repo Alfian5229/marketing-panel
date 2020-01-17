@@ -18,7 +18,10 @@
                         <thead class="thead-light">
                             <tr>
                                 <th rowspan="2">Product Code</th>
-                                <th colspan="2">Total Terjual</th>
+                            </tr>
+                            <tr>
+                                <th>Total Terjual</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -26,6 +29,7 @@
                                 <tr>
                                     <td>{{$key->product_kode}}</td>
                                     <td>{{$key->total_terjual}}</td>
+                                    <td>{{$key->transaksi_status}}</td>
                                 </tr>
                             @endforeach
                         </tbody>

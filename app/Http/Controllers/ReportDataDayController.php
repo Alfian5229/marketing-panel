@@ -12,7 +12,7 @@ class ReportDataDayController extends Controller
         set_time_limit(500);
         $bulan = '01';
         $min_tanggal = 1;
-        $max_tanggal = 30;
+        $max_tanggal = 31;
 
         DB::beginTransaction();
         try {
@@ -34,7 +34,6 @@ class ReportDataDayController extends Controller
 
                 $index = 0;
                 foreach($trx as $key){
-                    echo($key->count . " ");
                     DB::connection('pgsql')
                         ->table('data_product_terlaris_2019_' . $bulan)
                         ->where('product_kode', '=', $key->product_kode)
@@ -44,7 +43,7 @@ class ReportDataDayController extends Controller
                 }
             }
             DB::commit();
-            echo "Alhamdulillah, semoga barokah";
+            echo "Alhamdulillah, semoga barokah. Bulan : ". $bulan;
         } catch (\Exception $e) {
             DB::rollback();
             echo $e->getMessage();

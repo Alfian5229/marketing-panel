@@ -199,8 +199,29 @@
                                     <a class="nav-link" href="/dataumur/55/64">
                                         {{ __('Umur 55 Sampai 64 Tahun') }}
                                     </a>
-                                    <a class="nav-link" href="/dataumur/65">
+                                    <a class="nav-link" href="/dataumur/65/0">
                                         {{ __('Umur 65 Tahun keatas') }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        {{-- Data Umur User --}}
+                        <a class="nav-link" href="#data-type" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="data-type">
+                            <i class="ni ni-ungroup text-orange"></i>
+                            <span class="nav-link-text">{{ __('Data User berdasarkan Type') }}</span>
+                        </a>
+                        <div class="collapse {{ $activepage == 'data_umur' ? ' show' : '' }}" id="data-type">
+                            <ul class="nav nav-sm flex-column">
+                                <li class="nav-item {{ $activepage == 'data_umur' ? ' active' : '' }}">
+                                    <a class="nav-link" href="/typeuser/active">
+                                        {{ __('User Active') }}
+                                    </a>
+                                    <a class="nav-link" href="/typeuser/block">
+                                        {{ __('User Block') }}
+                                    </a>
+                                    <a class="nav-link" href="/typeuser/inactive">
+                                        {{ __('User Inactive') }}
                                     </a>
                                 </li>
                             </ul>

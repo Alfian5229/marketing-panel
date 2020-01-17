@@ -7,8 +7,8 @@
             <div class="card-header bg-transparent">
                 <div class="row align-items-center">
                     <div class="col">
-                        <h6 class="text-uppercase text-muted ls-1 mb-1">Bulan {{$bulan}}</h6>
-                        <h5 class="h3 mb-0">Product Terlaris Perhari</h5>
+                        <h6 class="text-uppercase text-muted ls-1 mb-1">status {{$type}}</h6>
+                        <h5 class="h3 mb-0">User by Type</h5>
                     </div>
                 </div>
             </div>
@@ -17,31 +17,17 @@
                     <table class="table table-flush" id="datatable-basic">
                         <thead class="thead-light">
                             <tr>
-                                <th rowspan="2">Product Code</th>
-                                {{-- @for ($i = 1; $i < $max_tanggal+1; $i++)
-                                    <th colspan="2">Day {{$i}}</th>
-                                @endfor --}}
+                                <th rowspan="2">Type user</th>
                             </tr>
                             <tr>
-                                @for ($i = 1; $i < $max_tanggal+1; $i++)
-                                    <th>Day {{$i}}</th>
-                                @endfor
+                                <th>Total User</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($data as $key)
                                 <tr>
-                                    <td>{{$key->product_kode}}</td>
-                                    @for ($i = 1; $i < $max_tanggal+1; $i++)
-                                        @php
-                                            $day = 'day_' . $i;
-                                        @endphp
-                                        @if($key->$day === 0)
-                                            <td class="text-center" style="color: red"><?php echo $key->$day ?></td>
-                                        @else
-                                            <td class="text-center"><?php echo $key->$day ?></td>
-                                        @endif
-                                    @endfor
+                                    <td>{{$key->mbr_type}}</td>
+                                    <td>{{$key->total_user}}</td>
                                 </tr>
                             @endforeach
                         </tbody>

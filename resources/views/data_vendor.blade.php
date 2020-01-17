@@ -20,12 +20,24 @@
                                 <th rowspan="2">ID Vendor</th>
                                 <th rowspan="2">Total Product Terjual</th>
                             </tr>
+                            <tr>
+                                <th>Status Transaksi</th>
+                            </tr>
                         </thead>
                         <tbody>
                             @foreach ($data as $key)
                                 <tr>
-                                    <td><a href="/dataproductvendor/{{$bulan}}/{{$key->supliyer_id}}">{{$key->supliyer_id}}</a></td>
+                                    <td><a href="/dataproductvendor/{{$bulan}}/{{$key->supliyer_id}}/{{$key->transaksi_status}}">{{$key->supliyer_id}}</a></td>
                                     <td>{{$key->total_product_terjual}}</td>
+                                    @if($key->transaksi_status === 'Active')
+                                        <td style="color: green">{{$key->transaksi_status}}</td>
+                                    @endif
+                                    @if($key->transaksi_status === 'Gagal')
+                                        <td style="color: red">{{$key->transaksi_status}}</td>
+                                    @endif
+                                    @if($key->transaksi_status === 'Refund')
+                                        <td>{{$key->transaksi_status}}</td>
+                                    @endif
                                 </tr>
                             @endforeach
                         </tbody>
