@@ -39,7 +39,7 @@ Route::get('/dashboard', function () {
 });
 
 Route::get('/datatrx/bulan/{bulan}', 'data_transaksi\DataTransaksiController@index');
-Route::get('/datatrx/json/{bulan}', 'data_transaksi\DataTransaksiController@json');
+Route::post('/datatrx/json/{bulan}', 'data_transaksi\DataTransaksiController@json');
 
 Route::get('/rekapitulasi/tampildata/{bulan}', 'rekapitulasi\perhitunganRekapController@');
 Route::get('/rekapitulasi/perhitungan/{bulan}/{max_tanggal}', 'rekapitulasi\PerhitunganRekapController@index');

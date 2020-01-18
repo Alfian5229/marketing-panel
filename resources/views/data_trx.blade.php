@@ -13,24 +13,24 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive py-4">
-                    <table class="table table-flush" id="myTable">
+                    <table class="table table-flush" id="example">
                         <thead class="thead-light text-center">
                             <tr>
-                                <th>mbr code</th>
-                                <th>full name</th>
-                                <th>phone</th>
-                                {{-- @for ($i = 1; $i < $max_tanggal+1; $i++)
+                                <th rowspan="2">mbr code</th>
+                                <th rowspan="2">full name</th>
+                                <th rowspan="2">phone</th>
+                                @for ($i = 1; $i < $max_tanggal+1; $i++)
                                     <th colspan="2">tanggal {{$i}}</th>
-                                @endfor --}}
+                                @endfor
                             </tr>
-                            {{-- <tr>
+                            <tr>
                                 @for ($i = 1; $i < $max_tanggal+1; $i++)
                                     <th>Sum</th>
                                     <th>Count</th>
                                 @endfor
-                            </tr> --}}
+                            </tr>
                         </thead>
-                        <tbody>
+                        {{-- <tbody>
                             @foreach ($data as $key)
                                 <tr>
                                     <td>{{$key->mbr_code}}</td>
@@ -46,7 +46,7 @@
                                     @endfor
                                 </tr>
                             @endforeach
-                        </tbody>
+                        </tbody> --}}
                     </table>
                 </div>
             </div>
@@ -56,41 +56,26 @@
 
 @push('js')
     <script>
-        // $(document).ready( function () {
-        //     $('#myTable').DataTable({
-        //         processing: true,
-        //         serverSide: true,
-        //         ajax: '/datatrx/json/1',
-        //         // "ajax": {
-        //         //     "url": "/datatrx/json/1",
-        //         //     "dataType": "json"
-        //         //     "type": 'POST',
-        //         //     "data": {"_token": "<?= csrf_token() ?>"},
-        //         // }
-        //         columns: [
-        //             { data: 'mbr_code', name: 'mbr_code'},
-        //             { data: 'full_name', name: 'full_name'},
-        //             { data: 'phone', name: 'phone'}
-        //         ]
-        //     });
-        // });
 
-        $(document).ready( function () {
-            $('#myTable').DataTable({
-                "processing": true,
-                "serverSide": true,
-                "ajax": {
-                    "url" : "/datatrx/json/1",
-                    "dataType": "json",
-                    "type": "POST",
-                    "data": {"_token": "<?= csrf_token()?>" }
-                },
-                "columns" : [
-                    {"data": "mbr_code"},
-                    {"data": "full_name"},
-                    {"data": "phone"}
-                ]
-            });
-        });
+    $('#example').DataTable({
+        "processing": true,
+        "serverSide": true,
+        "ajax": {
+            "url" : "/datatrx/json/" + {{$bulan}},
+            "dataType": "json",
+            "type": "POST",
+            "data": {"_token": "<?= csrf_token()?>" }
+        },
+        "columns" : [
+            {"data": "mbr_code"},
+            {"data": "full_name"},
+            {"data": "phone"},
+            @for ($i = 1; $i < $max_tanggal+1; $i++)
+                {"data": "sum_{{$i}}"},
+                {"data": "count_{{$i}}"},
+            @endfor
+        ]
+    });
+
     </script>
 @endpush
