@@ -14,15 +14,12 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive py-4">
-                    <table class="table table-flush" id="datatable-basic">
+                    <table class="table table-flush" id="datatable">
                         <thead class="thead-light">
                             <tr>
-                                <th rowspan="2">Product Code</th>
-                                {{-- @for ($i = 1; $i < $max_tanggal+1; $i++)
-                                    <th colspan="2">Day {{$i}}</th>
-                                @endfor --}}
-                            </tr>
-                            <tr>
+                                <th>Product Code</th>
+                                <th>Product Name</th>
+                                <th>Type Product</th>
                                 @for ($i = 1; $i < $max_tanggal+1; $i++)
                                     <th>Day {{$i}}</th>
                                 @endfor
@@ -32,6 +29,8 @@
                             @foreach ($data as $key)
                                 <tr>
                                     <td>{{$key->product_kode}}</td>
+                                    <td>{{$key->product_name}}</td>
+                                    <td>{{$key->type_product}}</td>
                                     @for ($i = 1; $i < $max_tanggal+1; $i++)
                                         @php
                                             $day = 'day_' . $i;
@@ -53,20 +52,35 @@
 @endsection
 
 @push('js')
-    <script>
-        // $(document).ready( function () {
-        //     $('#myTable').DataTable(
-        //         {
-        //             processing: true,
-        //             serverSide: true,
-        //             ajax: '/datatrx/json/januari',
-        //             columns: [
-        //                 { data: 'mbr_code', name: 'mbr_code' },
-        //                 { data: 'full_name', name: 'full_name' },
-        //                 { data: 'phone', name: 'phone' }
-        //             ]
-        //         }
-        //     );
-        // });
-    </script>
+<script>
+    // Variables
+    var $dtBasic = $('#datatable');
+
+    // Methods
+    function init($this) {
+        var options = {
+            keys: !0,
+            select: {
+                style: "multi"
+            },
+            language: {
+                paginate: {
+                    previous: "<i class='fas fa-angle-left'>",
+                    next: "<i class='fas fa-angle-right'>"
+                }
+            },
+            "order": [[ 2, "asc" ]]
+        };
+
+        // Init the datatable
+        var table = $this.on( 'init.dt', function () {
+            $('div.dataTables_length select').removeClass('custom-select custom-select-sm');
+        }).DataTable(options);
+    }
+
+    // Events
+    if ($dtBasic.length) {
+        init($dtBasic);
+    }
+</script>
 @endpush

@@ -10,8 +10,11 @@ use Carbon\Carbon;
 
 class DataTransaksiController extends Controller
 {
-    // public function index(){
-    //     return view('data_trx');
+    // public function index($bulan){
+    //     $carbon = Carbon::now();
+    //     $carbon->year(2019)->month($bulan);
+    //     $max_tanggal = $carbon->daysInMonth;
+    //     return view('data_trx', compact('bulan', 'max_tanggal'));
     // }
 
     public function index($bulan){
@@ -37,14 +40,16 @@ class DataTransaksiController extends Controller
         return view('data_trx', compact('data', 'max_tanggal', 'bulan'));
     }
 
-    public function json(){
-        ini_set('memory_limit', '1G');
+    // public function json(){
+    //     ini_set('memory_limit', '1G');
 
-        $data = ReportTrxCountSumModel::select('mbr_code', 'full_name', 'phone')
-            ->orderBy('mbr_code')
-            ->limit(10)
-            ->get()->toJson(JSON_PRETTY_PRINT);
-        return $data;
-    }
+    //     // $data = ReportTrxCountSumModel::select('mbr_code', 'full_name', 'phone')
+    //     //     ->orderBy('mbr_code')
+    //     //     ->limit(10)
+    //     //     ->get()->toJson(JSON_PRETTY_PRINT);
+    //     // return $data;
+
+    //     return Datatables::of(ReportTrxCountSumModel::select("mbr_code", "full_name", "phone")->get())->make(true);
+    // }
 }
 

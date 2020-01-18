@@ -45,6 +45,7 @@ Route::get('/rekapitulasi/tampildata/{bulan}', 'rekapitulasi\perhitunganRekapCon
 Route::get('/rekapitulasi/perhitungan/{bulan}/{max_tanggal}', 'rekapitulasi\PerhitunganRekapController@index');
 
 Route::get('/datavendor/{bulan}', 'DataTransaksiProductController@vendor');
+
 Route::get('/dataproductvendor/{vendor}/{bulan}/{status}', 'DataTransaksiProductController@index');
 Route::get('/dataproduct/{bulan}', 'DataTransaksiProductController@product');
 
@@ -53,3 +54,5 @@ Route::get('/dataumur/{awal}/{akhir}', 'DataUmurUserController@index');
 Route::get('/typeuser/{type}', 'DataUserTypeController@index');
 
 Route::get('/dataday', 'ReportDataDayController@countSum');
+
+Route::get('/data_asal_user', 'data_asal_user\DataAsalUserController@index');

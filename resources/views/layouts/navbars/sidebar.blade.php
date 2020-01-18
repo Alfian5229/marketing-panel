@@ -226,7 +226,12 @@
                                 </li>
                             </ul>
                         </div>
-
+                    </li>
+                    <li class="nav-item {{ $activepage == 'dataasaluser' ? ' active' : '' }}">
+                        <a class="nav-link" href="/data_asal_user">
+                            <i class="ni ni-ungroup text-primary"></i>
+                            <span class="nav-link-text">Data Asal User Tahun 2019</span>
+                        </a>
                     </li>
                     {{-- <li class="nav-item">
                         <a class="nav-link" href="#navbar-laporan" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-examples">

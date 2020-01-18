@@ -58,8 +58,9 @@ class DataTransaksiProductController extends Controller
         $max_tanggal = $carbon->daysInMonth;
 
         $data = DB::connection('pgsql')
-            ->select("SELECT * FROM data_product_terlaris_2019_" . $bulan . " ORDER BY product_kode");
-
+            ->select("SELECT * FROM data_product_terlaris_2019_" . $bulan . 
+            " AS bulan JOIN product ON product.product_kode = bulan.product_kode
+            ORDER BY bulan.product_kode");
         return view('data_product', compact('data', 'bulan', 'max_tanggal'));
     }
 }
