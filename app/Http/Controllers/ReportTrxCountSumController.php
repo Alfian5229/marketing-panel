@@ -17,12 +17,12 @@ class ReportTrxCountSumController extends Controller
 
     public function countSum(){
         set_time_limit(500);
-        $bulan = '01';
-        $min_tanggal = 1;
-        $max_tanggal = 15;
+        $bulan = '12';
+        $min_tanggal = 9;
+        $max_tanggal = 12;
 
-        DB::beginTransaction();
-        try {
+        // DB::beginTransaction();
+        // try {
             $max_tanggal = $max_tanggal+1;
             for($i = $min_tanggal; $i < $max_tanggal; $i++){
                 $tanggal = $i;
@@ -50,12 +50,12 @@ class ReportTrxCountSumController extends Controller
                         ]);
                 }
             }
-            DB::commit();
+            // DB::commit();
             echo "Alhamdulillah, semoga barokah";
-        } catch (\Exception $e) {
-            DB::rollback();
-            echo $e->getMessage();
-        }
+        // } catch (\Exception $e) {
+        //     DB::rollback();
+        //     echo $e->getMessage();
+        // }
     }
 }
 

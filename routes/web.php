@@ -15,7 +15,9 @@
 //     return view('welcome');
 // });
 
-Route::get('/', 'HomeController@index');
+Route::get('/', function () {
+    return view('dashboard');
+});
 Route::get('/transaksi', 'TransaksiController@index');
 
 Route::get('/mesintrxcountperday', 'TransaksiController@mesinTrxCountPerDay');
@@ -41,8 +43,8 @@ Route::get('/dashboard', function () {
 Route::get('/datatrx/bulan/{bulan}', 'data_transaksi\DataTransaksiController@index');
 Route::post('/datatrx/json/{bulan}', 'data_transaksi\DataTransaksiController@json');
 
-Route::get('/rekapitulasi/tampildata/{bulan}', 'rekapitulasi\perhitunganRekapController@');
-Route::get('/rekapitulasi/perhitungan/{bulan}/{max_tanggal}', 'rekapitulasi\PerhitunganRekapController@index');
+Route::get('/rekapitulasi/tampildata', 'rekapitulasi\perhitunganRekapController@tampilData');
+Route::get('/rekapitulasi/perhitungan/{bulan}', 'rekapitulasi\PerhitunganRekapController@index');
 
 Route::get('/datavendor/{bulan}', 'DataTransaksiProductController@vendor');
 
@@ -56,3 +58,9 @@ Route::get('/typeuser/{type}', 'DataUserTypeController@index');
 Route::get('/dataday', 'ReportDataDayController@countSum');
 
 Route::get('/data_asal_user', 'data_asal_user\DataAsalUserController@index');
+
+Route::get('/super_active_member/tampildata', 'super_active_member\SuperActiveMemberController@tampilData');
+Route::get('/super_active_member/perhitungan/{bulan}', 'rekapitulasi\PerhitunganRekapController@superActiveMember');
+
+Route::get('/register/tampildata', 'register\RegisterController@tampilData');
+Route::get('/register/perhitungan/{bulan}', 'register\RegisterController@hitungMember');

@@ -36,7 +36,7 @@
                                             $day = 'day_' . $i;
                                         @endphp
                                         @if($key->$day === 0)
-                                            <td class="text-center" style="color: red"><?php echo $key->$day ?></td>
+                                            <td class="text-center text-danger"><?php echo $key->$day ?></td>
                                         @else
                                             <td class="text-center"><?php echo $key->$day ?></td>
                                         @endif

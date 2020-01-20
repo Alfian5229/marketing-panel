@@ -56,26 +56,33 @@
 
 @push('js')
     <script>
-
-    $('#example').DataTable({
-        "processing": true,
-        "serverSide": true,
-        "ajax": {
-            "url" : "/datatrx/json/" + {{$bulan}},
-            "dataType": "json",
-            "type": "POST",
-            "data": {"_token": "<?= csrf_token()?>" }
-        },
-        "columns" : [
-            {"data": "mbr_code"},
-            {"data": "full_name"},
-            {"data": "phone"},
-            @for ($i = 1; $i < $max_tanggal+1; $i++)
-                {"data": "sum_{{$i}}"},
-                {"data": "count_{{$i}}"},
-            @endfor
-        ]
-    });
-
+        $('#example').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url" : "/datatrx/json/" + {{$bulan}},
+                "dataType": "json",
+                "type": "POST",
+                "data": {"_token": "<?= csrf_token()?>" }
+            },
+            "columns" : [
+                {"data": "mbr_code"},
+                {"data": "full_name"},
+                {"data": "phone"},
+                @for ($i = 1; $i < $max_tanggal+1; $i++)
+                    {"data": "sum_{{$i}}"},
+                    {"data": "count_{{$i}}"},
+                @endfor
+            ],
+            select: {
+                style: "multi"
+            },
+            language: {
+                paginate: {
+                    previous: "<i class='fas fa-angle-left'>",
+                    next: "<i class='fas fa-angle-right'>"
+                }
+            },
+        });
     </script>
 @endpush

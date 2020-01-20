@@ -32,7 +32,7 @@
                         {{-- Data Transaksi --}}
                         <a class="nav-link" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-examples">
                             <i class="ni ni-ungroup text-orange"></i>
-                            <span class="nav-link-text">{{ __('Data Transaksi 2019') }}</span>
+                            <span class="nav-link-text">{{ __('Data Transaksi Tahun 2019') }}</span>
                         </a>
                         <div class="collapse {{ $activepage == 'data_transaksi' ? ' show' : '' }}" id="navbar-examples">
                             <ul class="nav nav-sm flex-column">
@@ -77,10 +77,17 @@
                             </ul>
                         </div>
 
+                        <li class="nav-item {{ $activepage == 'rekapitulasi' ? ' active' : '' }}">
+                            <a class="nav-link" href="/rekapitulasi/tampildata">
+                                <i class="ni ni-ungroup text-primary"></i>
+                                <span class="nav-link-text">Rekapitulasi Tahun 2019</span>
+                            </a>
+                        </li>
+
                         {{-- Data Product Terlaris --}}
                         <a class="nav-link" href="#data-product" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="data-product">
                             <i class="ni ni-ungroup text-orange"></i>
-                            <span class="nav-link-text">{{ __('Data Product Terlaris 2019') }}</span>
+                            <span class="nav-link-text">{{ __('Data Product Terlaris Tahun 2019') }}</span>
                         </a>
                         <div class="collapse {{ $activepage == 'data_product' ? ' show' : '' }}" id="data-product">
                             <ul class="nav nav-sm flex-column">
@@ -128,7 +135,7 @@
                         {{-- Data Vendor --}}
                         <a class="nav-link" href="#data-vendor" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="data-vendor">
                             <i class="ni ni-ungroup text-orange"></i>
-                            <span class="nav-link-text">{{ __('Data Vendor Terlaris 2019') }}</span>
+                            <span class="nav-link-text">{{ __('Data Vendor Terlaris Tahun 2019') }}</span>
                         </a>
                         <div class="collapse {{ $activepage == 'data_product' ? ' show' : '' }}" id="data-vendor">
                             <ul class="nav nav-sm flex-column">
@@ -231,6 +238,27 @@
                         <a class="nav-link" href="/data_asal_user">
                             <i class="ni ni-ungroup text-primary"></i>
                             <span class="nav-link-text">Data Asal User Tahun 2019</span>
+                        </a>
+                    </li>
+                    <li class="nav-item {{ $activepage == 'superactive' ? ' active' : '' }}">
+                        <a class="nav-link" href="/super_active_member/tampildata">
+                        {{-- <a class="nav-link" href="#"> --}}
+                            <i class="ni ni-ungroup text-primary"></i>
+                            <span class="nav-link-text">Super Active Member Tahun 2019 (<span class="text-danger">masih client-side</span>)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item {{ $activepage == 'pushactive' ? ' active' : '' }}">
+                        <a class="nav-link" href="#">
+                        {{-- <a class="nav-link" href="#"> --}}
+                            <i class="ni ni-ungroup text-primary"></i>
+                            <span class="nav-link-text">Push Active Member Tahun 2019 (<span class="text-danger">pending</span>)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item {{ $activepage == 'registerdate' ? ' active' : '' }}">
+                        <a class="nav-link" href="#">
+                        {{-- <a class="nav-link" href="#"> --}}
+                            <i class="ni ni-ungroup text-primary"></i>
+                            <span class="nav-link-text">Data Member Register Tahun 2019 (<span class="text-danger">pending</span>)</span>
                         </a>
                     </li>
                     {{-- <li class="nav-item">

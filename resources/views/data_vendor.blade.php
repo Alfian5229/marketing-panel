@@ -30,10 +30,10 @@
                                     <td><a href="/dataproductvendor/{{$bulan}}/{{$key->supliyer_id}}/{{$key->transaksi_status}}">{{$key->supliyer_id}}</a></td>
                                     <td>{{$key->total_product_terjual}}</td>
                                     @if($key->transaksi_status === 'Active')
-                                        <td style="color: green">{{$key->transaksi_status}}</td>
+                                        <td class="text-success">{{$key->transaksi_status}}</td>
                                     @endif
                                     @if($key->transaksi_status === 'Gagal')
-                                        <td style="color: red">{{$key->transaksi_status}}</td>
+                                        <td class="text-danger">{{$key->transaksi_status}}</td>
                                     @endif
                                     @if($key->transaksi_status === 'Refund')
                                         <td>{{$key->transaksi_status}}</td>
