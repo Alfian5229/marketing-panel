@@ -10,9 +10,9 @@ class ReportDataDayController extends Controller
     //
     public function countSum(){
         set_time_limit(500);
-        $bulan = '01';
+        $bulan = '11';
         $min_tanggal = 1;
-        $max_tanggal = 31;
+        $max_tanggal = 30;
 
         DB::beginTransaction();
         try {
@@ -24,19 +24,18 @@ class ReportDataDayController extends Controller
                     $tanggal = '0' . $tanggal;
                 }
                 $trx = DB::connection('pgsql')
-                    ->select("SELECT product_kode, COUNT(product_kode)
-                        FROM report_transaksi_2019_" . $bulan . "
-                        WHERE to_char(tgl_trx, 'YYYY-MM-dd') = '2019-" . $bulan . "-" . $tanggal . "'
-                        AND transaksi_status = 'Active'
-                        GROUP BY product_kode
-                        ORDER BY product_kode;
+                    ->select("SELECT mbr_sponsor, COUNT(mbr_sponsor)
+                        FROM mbr_list
+                        WHERE to_char(mbr_date, 'YYYY-MM-dd') = '2019-" . $bulan . "-" . $tanggal . "'
+                        GROUP BY mbr_sponsor
+                        ORDER BY mbr_sponsor;
                     ");
 
                 $index = 0;
                 foreach($trx as $key){
                     DB::connection('pgsql')
-                        ->table('data_product_terlaris_2019_' . $bulan)
-                        ->where('product_kode', '=', $key->product_kode)
+                        ->table('data_register_2019_' . $bulan)
+                        ->where('mbr_sponsor', '=', $key->mbr_sponsor)
                         ->update([
                             'day_' . $tanggal_report => $key->count
                         ]);

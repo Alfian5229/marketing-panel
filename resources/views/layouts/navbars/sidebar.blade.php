@@ -254,54 +254,53 @@
                             <span class="nav-link-text">Push Active Member Tahun 2019 (<span class="text-danger">pending</span>)</span>
                         </a>
                     </li>
-                    <li class="nav-item {{ $activepage == 'registerdate' ? ' active' : '' }}">
-                        <a class="nav-link" href="#">
-                        {{-- <a class="nav-link" href="#"> --}}
-                            <i class="ni ni-ungroup text-primary"></i>
-                            <span class="nav-link-text">Data Member Register Tahun 2019 (<span class="text-danger">pending</span>)</span>
-                        </a>
-                    </li>
-                    {{-- <li class="nav-item">
-                        <a class="nav-link" href="#navbar-laporan" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-examples">
-                            <i class="ni ni-archive-2 text-green"></i>
-                            <span class="nav-link-text">{{ __('Report') }}</span>
-                        </a>
-                        <div class="collapse {{ $activepage == 'withdraw' | $activepage == 'transaksi' ? ' show' : '' }}" id="navbar-laporan">
-                            <ul class="nav nav-sm flex-column">
-                                <li class="nav-item {{ $activepage == 'transaksi' ? ' active' : '' }}">
-                                    <a class="nav-link" href="/transaksi">
-                                        {{ __('Transaction') }}
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item {{ $activepage == 'withdraw' ? ' active' : '' }}">
-                        <a class="nav-link" href="/withdraw">
-                            <i class="ni ni-tv-2 text-primary"></i>
-                            <span class="nav-link-text">Withdraw</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#navbar-crm" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-examples">
-                            <i class="ni ni-circle-08 text-orange"></i>
-                            <span class="nav-link-text">{{ __('Management CRM') }}</span>
-                        </a>
-                        <div class="collapse {{ $activepage == 'users' ? ' show' : '' }}" id="navbar-crm">
-                            <ul class="nav nav-sm flex-column">
-                                <li class="nav-item {{ $activepage == 'users' ? ' active' : '' }}">
-                                    <a class="nav-link" href="/users">
-                                        {{ __('User CRM') }}
-                                    </a>
-                                </li>
-                                <li class="nav-item {{ $activepage == 'users' ? ' active' : '' }}">
-                                    <a class="nav-link" href="/logactivity">
-                                        {{ __('Log Activity Users') }}
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li> --}}
+                    {{-- Data Member Register --}}
+                    <a class="nav-link" href="#data-member" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="data-member">
+                        <i class="ni ni-ungroup text-orange"></i>
+                        <span class="nav-link-text">{{ __('Data Member Register') }}</span>
+                    </a>
+                    <div class="collapse {{ $activepage == 'registerdate' ? ' show' : '' }}" id="data-member">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item {{ $activepage == 'registerdate' ? ' active' : '' }}">
+                                <a class="nav-link" href="/register/tampildatamember/1">
+                                    {{ __('Januari') }}
+                                </a>
+                                <a class="nav-link" href="/register/tampildatamember/2">
+                                    {{ __('Februari') }}
+                                </a>
+                                <a class="nav-link" href="/register/tampildatamember/3">
+                                    {{ __('Maret') }}
+                                </a>
+                                <a class="nav-link" href="/register/tampildatamember/4">
+                                    {{ __('April') }}
+                                </a>
+                                <a class="nav-link" href="/register/tampildatamember/5">
+                                    {{ __('Mei') }}
+                                </a>
+                                <a class="nav-link" href="/register/tampildatamember/6">
+                                    {{ __('Juni') }}
+                                </a>
+                                <a class="nav-link" href="/register/tampildatamember/7">
+                                    {{ __('Juli') }}
+                                </a>
+                                <a class="nav-link" href="/register/tampildatamember/8">
+                                    {{ __('Agustus') }}
+                                </a>
+                                <a class="nav-link" href="/register/tampildatamember/9">
+                                    {{ __('September') }}
+                                </a>
+                                <a class="nav-link" href="/register/tampildatamember/10">
+                                    {{ __('Oktober') }}
+                                </a>
+                                <a class="nav-link" href="/register/tampildatamember/11">
+                                    {{ __('November') }}
+                                </a>
+                                <a class="nav-link" href="/register/tampildatamember/12">
+                                    {{ __('Desember') }}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </ul>
             </div>
         </div>

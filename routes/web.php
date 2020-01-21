@@ -63,4 +63,5 @@ Route::get('/super_active_member/tampildata', 'super_active_member\SuperActiveMe
 Route::get('/super_active_member/perhitungan/{bulan}', 'rekapitulasi\PerhitunganRekapController@superActiveMember');
 
 Route::get('/register/tampildata', 'register\RegisterController@tampilData');
+Route::get('/register/tampildatamember/{bulan}', 'register\RegisterController@tampilDataMember');
 Route::get('/register/perhitungan/{bulan}', 'register\RegisterController@hitungMember');

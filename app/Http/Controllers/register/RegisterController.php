@@ -44,4 +44,22 @@ class RegisterController extends Controller
             dd(count($data));
         }
     }
+
+    public function tampilDataMember($bulan) {
+        $carbon = Carbon::now();
+        $carbon->year(2019)->month($bulan);
+        $max_tanggal = $carbon->daysInMonth;
+
+        if(strlen($bulan) == 1){
+            $bulan = '0' . $bulan;
+        }
+
+        $max_tanggal = $carbon->daysInMonth;
+
+        $data = DB::connection('pgsql')
+            ->select("SELECT * FROM data_register_2019_" . $bulan . " ORDER BY mbr_sponsor");
+        
+        // dd($data);
+        return view('data_register', compact('data', 'bulan', 'max_tanggal'));
+    }
 }
