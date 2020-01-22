@@ -11,9 +11,9 @@ use Carbon\Carbon;
 
 class PerhitunganRekapController extends Controller
 {
-    public function index($bulan){
+    public function index($bulan, $tahun){
         $carbon = Carbon::now();
-        $carbon->year(2019)->month($bulan);
+        $carbon->year($tahun)->month($bulan);
         $max_tanggal = $carbon->daysInMonth;
 
         if(strlen($bulan) == 1){
@@ -24,7 +24,7 @@ class PerhitunganRekapController extends Controller
         $sum = array();
         for($i = 1; $i < 1+$max_tanggal; $i++){
             $tanggal = $i;
-            $data = DB::table('report_trx_count_sum_2019_' . $bulan)
+            $data = DB::table('report_trx_count_sum_' . $tahun . '_' . $bulan)
                 ->selectRaw('sum(sum_' . $tanggal . ')')
                 ->first();
             $sum[$i-1] = $data->sum;
@@ -38,7 +38,7 @@ class PerhitunganRekapController extends Controller
         $count = array();
         for($i = 1; $i < 1+$max_tanggal; $i++){
             $tanggal = $i;
-            $data = DB::table('report_trx_count_sum_2019_' . $bulan)
+            $data = DB::table('report_trx_count_sum_' . $tahun . '_' . $bulan)
                 ->selectRaw('sum(count_' . $tanggal . ')')
                 ->first();
             $count[$i-1] = $data->sum;
@@ -52,7 +52,7 @@ class PerhitunganRekapController extends Controller
         $sum = array();
         for($i = 1; $i < 1+$max_tanggal; $i++){
             $tanggal = $i;
-            $data = DB::table('report_trx_count_sum_gagal_2019_' . $bulan)
+            $data = DB::table('report_trx_count_sum_gagal_' . $tahun . '_' . $bulan)
                 ->selectRaw('sum(sum_' . $tanggal . ')')
                 ->first();
             $sum[$i-1] = $data->sum;
@@ -66,7 +66,7 @@ class PerhitunganRekapController extends Controller
         $count = array();
         for($i = 1; $i < 1+$max_tanggal; $i++){
             $tanggal = $i;
-            $data = DB::table('report_trx_count_sum_gagal_2019_' . $bulan)
+            $data = DB::table('report_trx_count_sum_gagal_' . $tahun . '_' . $bulan)
                 ->selectRaw('sum(count_' . $tanggal . ')')
                 ->first();
             $count[$i-1] = $data->sum;
@@ -77,18 +77,18 @@ class PerhitunganRekapController extends Controller
         }
 
         //unique sukses
-        $data = DB::table('report_trx_count_sum_2019_' . $bulan)
+        $data = DB::table('report_trx_count_sum_' . $tahun . '_' . $bulan)
             ->selectRaw('count(distinct mbr_code)')
             ->first();
         $unique_user = $data->count;
 
         //unique gagal
-        $data = DB::table('report_trx_count_sum_gagal_2019_' . $bulan)
+        $data = DB::table('report_trx_count_sum_gagal_' . $tahun . '_' . $bulan)
             ->selectRaw('count(distinct mbr_code)')
             ->first();
         $unique_user_gagal = $data->count;
 
-        DB::table('rekapitulasi_2019')
+        DB::table('rekapitulasi_' . $tahun)
             ->where('id', $bulan)
             ->update([
                 'sum_sukses'        => $total_sum,
@@ -107,7 +107,7 @@ class PerhitunganRekapController extends Controller
         //month loop
         for($bulan = 1; $bulan < 13; $bulan++){
             $carbon = Carbon::now();
-            $carbon->year(2019)->month($bulan);
+            $carbon->year(2018)->month($bulan);
             $max_tanggal = $carbon->daysInMonth;
             $nama_bulan = strtolower($carbon->format('F'));
 
@@ -116,7 +116,7 @@ class PerhitunganRekapController extends Controller
             }
 
             $super_active = 0;
-            $data = DB::table('report_trx_count_sum_2019_' . $bulan)->get();
+            $data = DB::table('report_trx_count_sum_2018_' . $bulan)->get();
 
             //row loop
             foreach($data as $key){
@@ -130,8 +130,13 @@ class PerhitunganRekapController extends Controller
                 }
                 if($temp >= 15){
                     $super_active = $super_active+1;
-
-                    DB::table('super_active_member_2019')
+                    $cek = DB::table('super_active_member_2018')->where('mbr_code', $key->mbr_code)->first();
+                    if(!$cek){
+                        DB::table('super_active_member_2018')->insert(
+                            ['mbr_code' => $key->mbr_code]
+                        );
+                    }
+                    DB::table('super_active_member_2018')
                     ->where('mbr_code', $key->mbr_code)
                     ->update([
                         $nama_bulan => $temp
@@ -139,7 +144,7 @@ class PerhitunganRekapController extends Controller
                 }
             }
 
-            DB::table('rekapitulasi_2019')
+            DB::table('rekapitulasi_2018')
             ->where('id', $bulan)
             ->update([
                 'trx_two_days_each' => $super_active
@@ -194,9 +199,9 @@ class PerhitunganRekapController extends Controller
 
     }
 
-    public function tampilData(){
-        $data = Rekapitulasi::orderBy('id')->get();
+    public function tampilData($tahun){
+        $data = DB::table('rekapitulasi_' . $tahun)->orderBy('id')->get();
 
-        return view('rekapitulasi', compact('data'));
+        return view('rekapitulasi', compact('data', 'tahun'));
     }
 }

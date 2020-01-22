@@ -17,9 +17,8 @@
                     <table class="table table-flush" id="datatable-basic">
                         <thead class="thead-light">
                             <tr>
-                                <th rowspan="2">Product Code</th>
-                            </tr>
-                            <tr>
+                                <th>Kode Produk</th>
+                                <th>Nama Produk</th>
                                 <th>Total Terjual</th>
                                 <th>Status</th>
                             </tr>
@@ -28,6 +27,7 @@
                             @foreach ($data as $key)
                                 <tr>
                                     <td>{{$key->product_kode}}</td>
+                                    <td>{{$key->product_name}}</td>
                                     <td>{{$key->total_terjual}}</td>
                                     <td>{{$key->transaksi_status}}</td>
                                 </tr>

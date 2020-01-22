@@ -1,4 +1,4 @@
-@extends('layouts.app', [ 'activepage' => 'rekapitulasi', 'title' => 'Rekapitulasi 2019'])
+@extends('layouts.app', [ 'activepage' => 'rekapitulasi' . $tahun, 'title' => 'Rekapitulasi ' . $tahun])
 
 @section('content')
 
@@ -7,7 +7,7 @@
             <div class="card-header bg-transparent">
                 <div class="row align-items-center">
                     <div class="col">
-                        <h5 class="h3 mb-0">Rekapitulasi 2019</h5>
+                        <h5 class="h3 mb-0">Rekapitulasi {{$tahun}}</h5>
                     </div>
                 </div>
             </div>

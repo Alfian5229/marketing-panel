@@ -19,6 +19,7 @@
                                 <th rowspan="2">mbr code</th>
                                 <th rowspan="2">full name</th>
                                 <th rowspan="2">phone</th>
+                                <th rowspan="2">super_active</th>
                                 @for ($i = 1; $i < $max_tanggal+1; $i++)
                                     <th colspan="2">tanggal {{$i}}</th>
                                 @endfor
@@ -30,23 +31,18 @@
                                 @endfor
                             </tr>
                         </thead>
-                        {{-- <tbody>
-                            @foreach ($data as $key)
-                                <tr>
-                                    <td>{{$key->mbr_code}}</td>
-                                    <td>{{$key->full_name}}</td>
-                                    <td>{{$key->phone}}</td>
-                                    @for ($i = 1; $i < $max_tanggal+1; $i++)
-                                        @php
-                                            $sum = 'sum_' . $i;
-                                            $count = 'count_' . $i;
-                                        @endphp
-                                        <td class="text-right">{{$key->$sum}}</td>
-                                        <td class="text-right">{{$key->$count}}</td>
-                                    @endfor
-                                </tr>
-                            @endforeach
-                        </tbody> --}}
+                        <tfoot class="text-right">
+                            <th colspan="3">Total/Jumlah Semua Data Bulan {{$bulan}}</th>
+                            <th>Active User = {{$total_super_active->active_user}}, Inactive User = {{$total_super_active->inactive_user}}</th>
+                            @for ($i = 1; $i < 1+$max_tanggal; $i++)
+                                @php
+                                    $sum = 'sum_' . $i;
+                                    $count = 'count_' . $i;
+                                @endphp
+                                <th>Rp {{number_format($total->$sum,2,',','.')}}</th>
+                                <th>{{$total->$count}}</th>
+                            @endfor
+                        </tfoot>
                     </table>
                 </div>
             </div>
@@ -60,7 +56,7 @@
             "processing": true,
             "serverSide": true,
             "ajax": {
-                "url" : "/datatrx/json/" + {{$bulan}},
+                "url" : "/datatrx/json/" + {{$bulan}} + "/" + {{$tahun}},
                 "dataType": "json",
                 "type": "POST",
                 "data": {"_token": "<?= csrf_token()?>" }
@@ -69,6 +65,13 @@
                 {"data": "mbr_code"},
                 {"data": "full_name"},
                 {"data": "phone"},
+                {"data": "super_active",
+                    render: function (data, type, row) {
+                        if (data >= 15)
+                            return '<span class="badge badge-success">Active</span>';
+                        return '<span class="badge badge-warning">Inactive</span>';
+                    }
+                },
                 @for ($i = 1; $i < $max_tanggal+1; $i++)
                     {"data": "sum_{{$i}}"},
                     {"data": "count_{{$i}}"},

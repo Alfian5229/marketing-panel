@@ -17,10 +17,9 @@
                     <table class="table table-flush" id="datatable-basic">
                         <thead class="thead-light">
                             <tr>
-                                <th rowspan="2">ID Vendor</th>
-                                <th rowspan="2">Total Product Terjual</th>
-                            </tr>
-                            <tr>
+                                <th>ID Vendor</th>
+                                <th>Nama Vendor</th>
+                                <th>Total Product Terjual</th>
                                 <th>Status Transaksi</th>
                             </tr>
                         </thead>
@@ -28,6 +27,7 @@
                             @foreach ($data as $key)
                                 <tr>
                                     <td><a href="/dataproductvendor/{{$bulan}}/{{$key->supliyer_id}}/{{$key->transaksi_status}}">{{$key->supliyer_id}}</a></td>
+                                    <td>{{$key->supliyer_name}}</td>
                                     <td>{{$key->total_product_terjual}}</td>
                                     @if($key->transaksi_status === 'Active')
                                         <td class="text-success">{{$key->transaksi_status}}</td>

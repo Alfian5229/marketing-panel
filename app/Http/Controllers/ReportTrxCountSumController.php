@@ -17,7 +17,7 @@ class ReportTrxCountSumController extends Controller
 
     public function countSum(){
         set_time_limit(500);
-        $bulan = '1';
+        $bulan = '01';
         $min_tanggal = 1;
         $max_tanggal = 15;
         $tahun = 2018;
@@ -35,7 +35,7 @@ class ReportTrxCountSumController extends Controller
                     ->select("SELECT mbr_code, COUNT(mbr_code), SUM(harga_jual)
                         FROM report_transaksi_" . $tahun . "_" . $bulan . "
                         WHERE to_char(tgl_trx, 'YYYY-MM-dd') = '" . $tahun . "-" . $bulan . "-" . $tanggal . "' 
-                        AND transaksi_status = 'Active'
+                        AND transaksi_status = 'Gagal'
                         GROUP BY mbr_code
                         ORDER BY mbr_code;
                     ");

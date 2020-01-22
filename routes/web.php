@@ -40,17 +40,16 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
-Route::get('/datatrx/bulan/{bulan}', 'data_transaksi\DataTransaksiController@index');
-Route::get('/datatrx/2018/bulan/{bulan}', 'data_transaksi\DataTransaksiController@datatrx_2018');
-Route::post('/datatrx/json/{bulan}', 'data_transaksi\DataTransaksiController@json');
+Route::get('/datatrx/bulan/{bulan}/{tahun}', 'data_transaksi\DataTransaksiController@index');
+Route::post('/datatrx/json/{bulan}/{tahun}', 'data_transaksi\DataTransaksiController@json');
 
-Route::get('/rekapitulasi/tampildata', 'rekapitulasi\perhitunganRekapController@tampilData');
-Route::get('/rekapitulasi/perhitungan/{bulan}', 'rekapitulasi\PerhitunganRekapController@index');
+Route::get('/rekapitulasi/tampildata/{tahun}', 'rekapitulasi\perhitunganRekapController@tampilData');
+Route::get('/rekapitulasi/perhitungan/{bulan}/{tahun}', 'rekapitulasi\PerhitunganRekapController@index');
 
 Route::get('/datavendor/{bulan}', 'DataTransaksiProductController@vendor');
 
 Route::get('/dataproductvendor/{vendor}/{bulan}/{status}', 'DataTransaksiProductController@index');
-Route::get('/dataproduct/{bulan}', 'DataTransaksiProductController@product');
+Route::get('/dataproduct/{bulan}/{tahun}', 'DataTransaksiProductController@product');
 
 Route::get('/dataumur/{awal}/{akhir}', 'DataUmurUserController@index');
 
@@ -63,6 +62,8 @@ Route::get('/data_asal_user', 'data_asal_user\DataAsalUserController@index');
 Route::get('/super_active_member/tampildata', 'super_active_member\SuperActiveMemberController@tampilData');
 Route::get('/super_active_member/perhitungan/{bulan}', 'rekapitulasi\PerhitunganRekapController@superActiveMember');
 Route::get('/super_active_member/perhitungan_perhari/{bulan}', 'rekapitulasi\PerhitunganRekapController@superActiveMemberPerhari');
+
+Route::get('/push_active_member/perhitungan/{tahun}', 'push_active_member\PushActiveMemberController@perhitungan');
 
 Route::get('/register/tampildata', 'register\RegisterController@tampilData');
 Route::get('/register/tampildatamember/{bulan}', 'register\RegisterController@tampilDataMember');
