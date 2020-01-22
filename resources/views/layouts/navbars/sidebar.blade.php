@@ -29,7 +29,55 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        {{-- Data Transaksi --}}
+                        {{-- Data Transaksi 2018 --}}
+                        <a class="nav-link" href="#data_trx_2018" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="data_trx_2018">
+                            <i class="ni ni-ungroup text-orange"></i>
+                            <span class="nav-link-text">{{ __('Data Transaksi Tahun 2018') }}</span>
+                        </a>
+                        <div class="collapse {{ $activepage == 'data_transaksi_2018' ? ' show' : '' }}" id="data_trx_2018">
+                            <ul class="nav nav-sm flex-column">
+                                <li class="nav-item {{ $activepage == 'data_trx_2018' ? ' active' : '' }}">
+                                    <a class="nav-link" href="/datatrx/2018/bulan/1">
+                                        {{ __('Januari') }}
+                                    </a>
+                                    <a class="nav-link" href="/datatrx/2018/bulan/2">
+                                        {{ __('Februari') }}
+                                    </a>
+                                    <a class="nav-link" href="/datatrx/2018/bulan/3">
+                                        {{ __('Maret') }}
+                                    </a>
+                                    <a class="nav-link" href="/datatrx/2018/bulan/4">
+                                        {{ __('April') }}
+                                    </a>
+                                    <a class="nav-link" href="/datatrx/2018/bulan/5">
+                                        {{ __('Mei') }}
+                                    </a>
+                                    <a class="nav-link" href="/datatrx/2018/bulan/6">
+                                        {{ __('Juni') }}
+                                    </a>
+                                    <a class="nav-link" href="/datatrx/2018/bulan/7">
+                                        {{ __('Juli') }}
+                                    </a>
+                                    <a class="nav-link" href="/datatrx/2018/bulan/8">
+                                        {{ __('Agustus') }}
+                                    </a>
+                                    <a class="nav-link" href="/datatrx/2018/bulan/9">
+                                        {{ __('September') }}
+                                    </a>
+                                    <a class="nav-link" href="/datatrx/2018/bulan/10">
+                                        {{ __('Oktober') }}
+                                    </a>
+                                    <a class="nav-link" href="/datatrx/2018/bulan/11">
+                                        {{ __('November') }}
+                                    </a>
+                                    <a class="nav-link" href="/datatrx/2018/bulan/12">
+                                        {{ __('Desember') }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        {{-- Data Transaksi 2019 --}}
                         <a class="nav-link" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-examples">
                             <i class="ni ni-ungroup text-orange"></i>
                             <span class="nav-link-text">{{ __('Data Transaksi Tahun 2019') }}</span>
@@ -257,7 +305,7 @@
                     {{-- Data Member Register --}}
                     <a class="nav-link" href="#data-member" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="data-member">
                         <i class="ni ni-ungroup text-orange"></i>
-                        <span class="nav-link-text">{{ __('Data Member Register') }}</span>
+                        <span class="nav-link-text">{{ __('Data Member Register 2019') }}</span>
                     </a>
                     <div class="collapse {{ $activepage == 'registerdate' ? ' show' : '' }}" id="data-member">
                         <ul class="nav nav-sm flex-column">

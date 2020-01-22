@@ -41,6 +41,7 @@ Route::get('/dashboard', function () {
 });
 
 Route::get('/datatrx/bulan/{bulan}', 'data_transaksi\DataTransaksiController@index');
+Route::get('/datatrx/2018/bulan/{bulan}', 'data_transaksi\DataTransaksiController@datatrx_2018');
 Route::post('/datatrx/json/{bulan}', 'data_transaksi\DataTransaksiController@json');
 
 Route::get('/rekapitulasi/tampildata', 'rekapitulasi\perhitunganRekapController@tampilData');
@@ -61,6 +62,7 @@ Route::get('/data_asal_user', 'data_asal_user\DataAsalUserController@index');
 
 Route::get('/super_active_member/tampildata', 'super_active_member\SuperActiveMemberController@tampilData');
 Route::get('/super_active_member/perhitungan/{bulan}', 'rekapitulasi\PerhitunganRekapController@superActiveMember');
+Route::get('/super_active_member/perhitungan_perhari/{bulan}', 'rekapitulasi\PerhitunganRekapController@superActiveMemberPerhari');
 
 Route::get('/register/tampildata', 'register\RegisterController@tampilData');
 Route::get('/register/tampildatamember/{bulan}', 'register\RegisterController@tampilDataMember');

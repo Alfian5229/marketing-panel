@@ -57,7 +57,7 @@ class RegisterController extends Controller
         $max_tanggal = $carbon->daysInMonth;
 
         $data = DB::connection('pgsql')
-            ->select("SELECT * FROM data_register_2019_" . $bulan . " ORDER BY mbr_sponsor");
+            ->select("SELECT * FROM data_register_2019_" . $bulan . " ORDER BY mbr_sponsor ASC");
         
         // dd($data);
         return view('data_register', compact('data', 'bulan', 'max_tanggal'));

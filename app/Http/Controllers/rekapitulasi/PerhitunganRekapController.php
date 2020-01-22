@@ -148,6 +148,52 @@ class PerhitunganRekapController extends Controller
 
     }
 
+    public function superActiveMemberPerhari($bulan){
+        ini_set('memory_limit', '1G');
+        //month loop
+        for($bulan = 1; $bulan < 13; $bulan++){
+            $carbon = Carbon::now();
+            $carbon->year(2019)->month($bulan);
+            $max_tanggal = $carbon->daysInMonth;
+            $nama_bulan = strtolower($carbon->format('F'));
+
+            if(strlen($bulan) == 1){
+                $bulan = '0' . $bulan;
+            }
+
+            $super_active = 0;
+            $data = DB::table('report_trx_count_sum_2019_' . $bulan)->get();
+
+            //row loop
+            foreach($data as $key){
+                $temp = 0;
+                //column loop
+                for($i = 1; $i < 1+$max_tanggal; $i++){
+                    $count = 'count_' . $i;
+                    if($key->$count != 0){
+                        $temp = $temp+1;
+                    }
+                }
+                if($temp >= 15){
+                    $super_active = $super_active+1;
+
+                    DB::table('super_active_member_2019')
+                    ->where('mbr_code', $key->mbr_code)
+                    ->update([
+                        $nama_bulan => $temp
+                    ]);
+                }
+            }
+
+            DB::table('rekapitulasi_2019')
+            ->where('id', $bulan)
+            ->update([
+                'trx_two_days_each' => $super_active
+            ]);
+        }
+
+    }
+
     public function tampilData(){
         $data = Rekapitulasi::orderBy('id')->get();
 
