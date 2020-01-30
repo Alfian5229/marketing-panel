@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-        <div class="navbar-inner">
+        <div class="navbar-inner mb-6">
             <!-- Collapse -->
             <div class="collapse navbar-collapse" id="sidenav-collapse-main">
                 <!-- Nav items -->
@@ -32,7 +32,7 @@
                         {{-- Data Transaksi 2018 --}}
                         <a class="nav-link" href="#data_trx_2018" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="data_trx_2018">
                             <i class="ni ni-ungroup text-orange"></i>
-                            <span class="nav-link-text">{{ __('Data Transaksi Tahun 2018') }}</span>
+                            <span class="nav-link-text">{{ __('Data Transaksi Sukses Tahun 2018') }}</span>
                         </a>
                         <div class="collapse {{ $activepage == 'data_transaksi_2018' ? ' show' : '' }}" id="data_trx_2018">
                             <ul class="nav nav-sm flex-column">
@@ -80,7 +80,7 @@
                         {{-- Data Transaksi 2019 --}}
                         <a class="nav-link" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-examples">
                             <i class="ni ni-ungroup text-orange"></i>
-                            <span class="nav-link-text">{{ __('Data Transaksi Tahun 2019') }}</span>
+                            <span class="nav-link-text">{{ __('Data Transaksi Sukses Tahun 2019') }}</span>
                         </a>
                         <div class="collapse {{ $activepage == 'data_transaksi' ? ' show' : '' }}" id="navbar-examples">
                             <ul class="nav nav-sm flex-column">
@@ -357,7 +357,7 @@
                             <span class="nav-link-text">Push Active Member Tahun 2019 (<span class="text-danger">pending</span>)</span>
                         </a>
                     </li>
-                    {{-- Data Member Register --}}
+                    {{-- Data Member Register
                     <a class="nav-link" href="#data-member" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="data-member">
                         <i class="ni ni-ungroup text-orange"></i>
                         <span class="nav-link-text">{{ __('Data Member Register 2019') }}</span>
@@ -400,6 +400,25 @@
                                 </a>
                                 <a class="nav-link" href="/register/tampildatamember/12">
                                     {{ __('Desember') }}
+                                </a>
+                            </li>
+                        </ul>
+                    </div> --}}
+                    {{-- Data Member Register --}}
+                    <a class="nav-link" href="#data-member-register" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="data-member-register">
+                        <i class="ni ni-ungroup text-orange"></i>
+                        <span class="nav-link-text">{{ __('Rekapitulasi Data Member Register 2019') }}</span>
+                    </a>
+                    <div class="collapse {{ $activepage == 'rekap_mbr_reg' ? ' show' : '' }}" id="data-member-register">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item {{ $activepage == 'rekap_mbr_reg_upline_2018' ? ' active' : '' }}">
+                                <a class="nav-link" href="/rekap_data_member/total_mbr_sponsor/2018">
+                                    {{ __('Mbr Sponsor/Upline Id Tahun 2018') }}
+                                </a>
+                            </li>
+                            <li class="nav-item {{ $activepage == 'rekap_mbr_reg_upline_2019' ? ' active' : '' }}">
+                                <a class="nav-link" href="/rekap_data_member/total_mbr_sponsor/2019">
+                                    {{ __('Mbr Sponsor/Upline Id Tahun 2019') }}
                                 </a>
                             </li>
                         </ul>

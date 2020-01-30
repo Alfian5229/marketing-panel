@@ -68,3 +68,15 @@ Route::get('/push_active_member/perhitungan/{tahun}', 'push_active_member\PushAc
 Route::get('/register/tampildata', 'register\RegisterController@tampilData');
 Route::get('/register/tampildatamember/{bulan}', 'register\RegisterController@tampilDataMember');
 Route::get('/register/perhitungan/{bulan}', 'register\RegisterController@hitungMember');
+
+Route::get('/rekap_data_member/total_mbr_sponsor/{tahun}', 'rekap_data_member\RekapDataMemberController@totalMbrSponsor');
+
+Route::get('/bonus/perhitungan/{bulan}/{tahun}', 'bonus\BonusController@perhitungan');
+
+Route::get('/deposit/perhitungan/{tahun}', 'deposit\DepositController@perhitungan');
+
+Route::get('/loyal_member/perhitungan/{tahun}', 'deposit\DepositController@perhitungan');
+
+Route::get('/hitung_december/perhitungan', 'hitung_december\HitungDecemberController@perhitungan');
+
+Route::get('/top_sponsor/perhitungan', 'top_sponsor\TopSponsorController@perhitungan');

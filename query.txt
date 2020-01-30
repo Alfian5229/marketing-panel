@@ -195,3 +195,100 @@ ALTER TABLE public.report_trx_count_sum_gagal_2019_12
 
 ALTER TABLE public.report_trx_count_sum_gagal_2019_12
     ALTER COLUMN count_31 SET DEFAULT 0;
+
+
+
+    CREATE TABLE public.active_member_2019_01
+(
+    mbr_code character varying NOT NULL,
+    tanggal_1 integer DEFAULT 0,
+    tanggal_2 integer DEFAULT 0,
+    tanggal_3 integer DEFAULT 0,
+    tanggal_4 integer DEFAULT 0,
+	tanggal_5 integer DEFAULT 0,
+	tanggal_6 integer DEFAULT 0,
+	tanggal_7 integer DEFAULT 0,
+	tanggal_8 integer DEFAULT 0,
+	tanggal_9 integer DEFAULT 0,
+	tanggal_10 integer DEFAULT 0,
+	tanggal_11 integer DEFAULT 0,
+	tanggal_12 integer DEFAULT 0,
+	tanggal_13 integer DEFAULT 0,
+	tanggal_14 integer DEFAULT 0,
+	tanggal_15 integer DEFAULT 0,
+	tanggal_16 integer DEFAULT 0,
+	tanggal_17 integer DEFAULT 0,
+	tanggal_18 integer DEFAULT 0,
+	tanggal_19 integer DEFAULT 0,
+	tanggal_20 integer DEFAULT 0,
+	tanggal_21 integer DEFAULT 0,
+	tanggal_22 integer DEFAULT 0,
+	tanggal_23 integer DEFAULT 0,
+	tanggal_24 integer DEFAULT 0,
+	tanggal_25 integer DEFAULT 0,
+	tanggal_26 integer DEFAULT 0,
+	tanggal_27 integer DEFAULT 0,
+	tanggal_28 integer DEFAULT 0,
+	tanggal_29 integer DEFAULT 0,
+	tanggal_30 integer DEFAULT 0,
+	tanggal_31 integer DEFAULT 0,
+    PRIMARY KEY (mbr_code)
+);
+
+ALTER TABLE public.super_active_member_2019_01
+    OWNER to postgres;
+
+
+
+CREATE TABLE public.report_bonus_perday_2019_02
+(
+    bonus_type character varying(150) NOT NULL,
+    day_1 bigint DEFAULT 0,
+    day_2 bigint DEFAULT 0,
+	day_3 bigint DEFAULT 0,
+	day_4 bigint DEFAULT 0,
+	day_5 bigint DEFAULT 0,
+	day_6 bigint DEFAULT 0,
+	day_7 bigint DEFAULT 0,
+	day_8 bigint DEFAULT 0,
+	day_9 bigint DEFAULT 0,
+	day_10 bigint DEFAULT 0,
+	day_11 bigint DEFAULT 0,
+	day_12 bigint DEFAULT 0,
+	day_13 bigint DEFAULT 0,
+	day_14 bigint DEFAULT 0,
+	day_15 bigint DEFAULT 0,
+	day_16 bigint DEFAULT 0,
+	day_17 bigint DEFAULT 0,
+	day_18 bigint DEFAULT 0,
+	day_19 bigint DEFAULT 0,
+	day_20 bigint DEFAULT 0,
+	day_21 bigint DEFAULT 0,
+	day_22 bigint DEFAULT 0,
+	day_23 bigint DEFAULT 0,
+	day_24 bigint DEFAULT 0,
+	day_25 bigint DEFAULT 0,
+	day_26 bigint DEFAULT 0,
+	day_27 bigint DEFAULT 0,
+	day_28 bigint DEFAULT 0,
+    PRIMARY KEY (bonus_type)
+);
+
+ALTER TABLE public.report_bonus_perday_2019_02
+    OWNER to postgres;
+
+
+
+select
+(select count(january) from push_active_member_2019 where january != 0) AS january,
+(select count(february) from push_active_member_2019 where february != 0) AS february,
+(select count(march) from push_active_member_2019 where march != 0) AS march,
+(select count(april) from push_active_member_2019 where april != 0) AS april,
+(select count(may) from push_active_member_2019 where may != 0) AS may,
+(select count(june) from push_active_member_2019 where june != 0) AS june,
+(select count(july) from push_active_member_2019 where july != 0) AS july,
+(select count(august) from push_active_member_2019 where august != 0) AS august,
+(select count(september) from push_active_member_2019 where september != 0) AS september,
+(select count(october) from push_active_member_2019 where october != 0) AS october,
+(select count(november) from push_active_member_2019 where november != 0) AS november,
+(select count(december) from push_active_member_2019 where december != 0) AS december

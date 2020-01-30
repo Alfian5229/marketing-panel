@@ -9,9 +9,11 @@ use Carbon\Carbon;
 class PushActiveMemberController extends Controller
 {
     public function perhitungan($tahun){
-
+        set_time_limit(500);
         $data = DB::table('super_active_member_' . $tahun)
-            ->limit(10)
+            ->orderBy('mbr_code')
+            // ->offset(40000)
+            // ->limit(60000)
             ->get();
 
         for($i = 1; $i < 13; $i++){
@@ -49,19 +51,18 @@ class PushActiveMemberController extends Controller
                     foreach ($data as $key) {
                         $tahun_1 = 2018;
                         $nama_bulan = 'november';
-                        $data_bulan_1 = DB::table('push_active_member_' . $tahun_1)->where('mbr_code', '=', $key->mbr_code)->first();
-                        if($data_bulan_1 == null){
+                        $data_bulan = DB::table('push_active_member_' . $tahun_1)->where('mbr_code', '=', $key->mbr_code)->first();
+                        if($data_bulan == null){
                             $data_bulan_1 = 0;
                         } else{
-                            $data_bulan_1 = $data_bulan_1->$nama_bulan;
+                            $data_bulan_1 = $data_bulan->$nama_bulan;
                         }
 
                         $nama_bulan = 'december';
-                        $data_bulan_2 = DB::table('push_active_member_' . $tahun_1)->where('mbr_code', '=', $key->mbr_code)->first();
-                        if($data_bulan_2 == null){
+                        if($data_bulan == null){
                             $data_bulan_2 = 0;
                         } else{
-                            $data_bulan_2 = $data_bulan_2->$nama_bulan;
+                            $data_bulan_2 = $data_bulan->$nama_bulan;
                         }
 
                         $carbon = Carbon::now();
@@ -89,8 +90,7 @@ class PushActiveMemberController extends Controller
                         }
 
                         $nama_bulan = 'january';
-                        $data_bulan_2 = DB::table('push_active_member_' . $tahun)->where('mbr_code', '=', $key->mbr_code)->first();
-                        $data_bulan_2->$nama_bulan;
+                        $data_bulan_2 = $key->$nama_bulan;
 
                         $carbon = Carbon::now();
                         $carbon->year($tahun)->month($i);
